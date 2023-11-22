@@ -5,18 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merch Signing!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="cssReset.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <h1>Best-Fit Merch Signing</h1>
+    <div id="merchImage">
+        <img src="images/bestfit-front.jpeg" alt="front view">
+        <img src="images/bestfit-back.jpeg" alt="back view">
+    </div>
     <form action="verified.html/">
-        <input type="text" name="" id="name">
-        <input type="email" name="" id="email">
-        <input type="number" name="" id="phone">
-        <input type="text" name="" id="bitsID">
+        <div id="name">
+            <label for="name">Full Name: </label>
+            <input type="text" name="name" id="name" class="box" placeholder="eg. John Lorem Doe" maxlength="50"
+                minlength="5" required>
+        </div>
+        <div id="email">
+            <label for="email">Email ID: </label>
+            <input type="email" name="email" id="email" class="box" placeholder="eg. example@gmail.com" required>
+        </div>
+        <div id="phone">
+            <label for="phone">Mobile Number: </label>
+            <input type="number" name="phone" id="phone" class="box" required>
+        </div>
+        <div id="bitsID">
+            <label for="bitsID">BITS ID: </label>
+            <input type="text" name="bitsID" id="bitsID" placeholder="eg. 2023B1PS9999P" class="box" required>
+        </div>
         <label for="hostel">Select your Hostel: </label>
-        <select name="hostel" id="hostel">
+        <select name="hostel" id="hostel" class="box" required>
             <option value="sr">SR Bhawan</option>
             <option value="vk">Vishwakarma Bhawan</option>
             <option value="me">Meera Bhawan</option>
@@ -34,20 +55,20 @@
         </select>
         <div id="sizeSelector">
             <label for="xs">XS</label>
-            <input type="radio" name="size" id="xs">
+            <input type="radio" name="size" id="xs" value="xs">
             <label for="s">S</label>
-            <input type="radio" name="size" id="s">
+            <input type="radio" name="size" id="s" value="s">
             <label for="m">M</label>
-            <input type="radio" name="size" id="m">
+            <input type="radio" name="size" id="m" value="m">
             <label for="l">L</label>
-            <input type="radio" name="size" id="l">
+            <input type="radio" name="size" id="l" value="l">
             <label for="xl">XL</label>
-            <input type="radio" name="size" id="xl">
+            <input type="radio" name="size" id="xl" value="xl">
             <label for="xxl">XXL</label>
-            <input type="radio" name="size" id="xxl">
+            <input type="radio" name="size" id="xxl" value="xxl">
         </div>
         <label for="tnc">I Agree to the Terms & Conditions</label>
-        <input type="checkbox" name="" id="tnc">
+        <input type="checkbox" name="tnc" id="tnc" required>
         <input type="submit" name="" id="">
         <input type="reset" name="" id="">
     </form>
