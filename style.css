@@ -38,6 +38,28 @@ h1 {
     margin: 0 1rem;
 }
 
+#labels label {
+    display: block;
+    height: 20px;
+    padding-top: 10.2px;
+}
+
+#labels label:first-of-type {
+    margin: 0;
+    padding: 0;
+    padding-top: 2.6px;
+}
+
+#labels {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+#inputs {
+    display: inline-block;
+    margin-left: 8px;
+}
+
 .box {
     height: 20px;
     max-width: 500px;
@@ -45,4 +67,9 @@ h1 {
     display: block;
     margin-bottom: 5px;
     border: 2px solid black;
+}
+
+.contents {
+    display: flex;
+    justify-content: center;
 }
