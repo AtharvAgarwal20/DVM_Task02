@@ -3,7 +3,7 @@ body {
 }
 
 .background {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
     background-image: url(images/dominik-schroder-FIKD9t5_5zQ-unsplash.jpg);
