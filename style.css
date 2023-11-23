@@ -1,11 +1,32 @@
 body {
-    background-color: #D8D8D8;
     font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+.background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(images/dominik-schroder-FIKD9t5_5zQ-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: -10;
+    filter: blur(5px);
 }
 
 input,
 select {
     border-radius: 8px;
+}
+
+form {
+    border-radius: 8px;
+    border: 2px solid black;
+    max-width: 541.08px;
+    margin: 10px auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
 }
 
 #merchImage {
@@ -60,6 +81,18 @@ h1 {
     margin-left: 8px;
 }
 
+#sizeSelector {
+    display: flex;
+    justify-content: space-between;
+    width: 315.51px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#sizeSelector .size input {
+    margin-right: 0px;
+}
+
 .box {
     height: 20px;
     max-width: 500px;
@@ -72,4 +105,13 @@ h1 {
 .contents {
     display: flex;
     justify-content: center;
+}
+
+.tnc {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.buttons {
+    text-align: center;
 }
