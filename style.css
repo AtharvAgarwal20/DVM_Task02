@@ -1,5 +1,5 @@
 body {
-    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-family: Jost, Arial, Helvetica, sans-serif;
 }
 
 .background {
@@ -9,7 +9,7 @@ body {
     background-image: url(images/dominik-schroder-FIKD9t5_5zQ-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-position: center;
     z-index: -10;
     filter: blur(5px);
 }
