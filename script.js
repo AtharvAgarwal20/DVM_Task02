@@ -32,6 +32,12 @@ function formSubmit(e) {
         alert(`Following errors have been encountered\n\n${errors.join('\n')}`)
     }
     console.log(errors.join('\n'))
+    console.log(name.value)
+    console.log(email.value)
+    console.log(bitsID.value)
+    console.log(phone.value)
+    console.log(hostel.value)
+    console.log(bitsIDregex)
 }
 
 form.addEventListener('submit', formSubmit)
