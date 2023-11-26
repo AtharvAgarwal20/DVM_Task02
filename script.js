@@ -3,6 +3,7 @@ const email = document.querySelector("#email")
 const phone = document.querySelector("#phone")
 const bitsID = document.querySelector("#bitsID")
 const hostel = document.querySelector("#hostel")
+const sizes = document.querySelectorAll(".sizes")
 const form = document.querySelector(".form")
 var errors = []
 var userData = {
@@ -11,11 +12,28 @@ var userData = {
     'phone': '',
     'bitsID': '',
     'hostel': '',
+    'size': ''
 }
-// const bitsIDregex = /\d{4}(A|B)\d(PS|TH)\d{4}(P|G|H)/gi
-// const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi
 const emailRegex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi)
 const bitsIDregex = new RegExp(/\d{4}(A|B)\d(PS|TH)\d{4}(P|G|H)/gi)
+
+function emailValidate() {
+    if (email.value.trim().match(emailRegex) == email.value.trim()) {
+        return true
+    }
+    else {
+        return false
+    }
+}
+
+function bitsIDValidate() {
+    if (bitsID.value.trim().match(bitsIDregex) == bitsID.value.trim()) {
+        return true
+    }
+    else {
+        return false
+    }
+}
 
 function formSubmit(e) {
     e.preventDefault()
@@ -26,9 +44,8 @@ function formSubmit(e) {
         'phone': '',
         'bitsID': '',
         'hostel': '',
+        'size': ''
     }
-    let emailValidation = emailRegex.test(email.value.trim())
-    let bitsIDValidation = bitsIDregex.test(bitsID.value.trim())
 
     if (name.value.trim().length < 5) {
         errors.push('Name too short')
@@ -37,7 +54,7 @@ function formSubmit(e) {
         error.push('Name too long')
     }
 
-    if (!emailValidation) {
+    if (!emailValidate()) {
         errors.push('Invalid Email')
     }
 
@@ -45,13 +62,12 @@ function formSubmit(e) {
         errors.push('Invalid phone number')
     }
 
-    if (!bitsIDValidation) {
-        errors.push('Invalid BITS ID format')
+    if (!bitsIDValidate()) {
+        errors.push('Invalid BITS ID')
     }
 
     if (errors.length > 0) {
         alert(`Following errors have been encountered\n\n${errors.join('\n')}`)
-
     }
     else if (errors.length === 0) {
         userData['name'] = name.value.trim()
@@ -59,6 +75,12 @@ function formSubmit(e) {
         userData['phone'] = phone.value
         userData['bitsID'] = bitsID.value.trim()
         userData['hostel'] = hostel.value
+
+        for (let i = 0; i < sizes.length; i += 1) {
+            if (sizes[i].checked) {
+                userData['size'] = sizes[i].value
+            }
+        }
 
         fetch('https://www.foo.com', {
             method: 'POST',
@@ -69,19 +91,10 @@ function formSubmit(e) {
             mode: 'no-cors',
             body: JSON.stringify(userData)
         })
+
+        console.log('Success')
+        console.log(userData)
     }
-    console.log(errors.join('\n'))
-    console.log(name.value.trim())
-    console.log(email.value.trim())
-    console.log(typeof (email.value.trim()))
-    console.log(bitsID.value.trim())
-    console.log(typeof (bitsID.value.trim()))
-    console.log(phone.value)
-    console.log(hostel.value)
-    console.log(bitsIDregex)
-    console.log(bitsIDValidation)
-    console.log(emailRegex)
-    console.log(emailValidation)
 }
 
 form.addEventListener('submit', formSubmit)
