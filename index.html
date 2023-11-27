@@ -15,87 +15,87 @@
 
 <body>
     <div class="background"></div>
-    <div id="colorUpper">
-        <h1>Best-Fit Merch Signing</h1>
-    </div>
+    <h1 id="initialHeading">Best-Fit Merch Signing</h1>
+    <h1 id="confirmed">Order Recieved!</h1>
     <div id="merchImage">
         <img src="images/bestfit-front-removebg-preview.png" alt="front view">
         <img src="images/bestfit-back-removebg-preview.png" alt="back view">
     </div>
-    <div id="colorLower">
-        <form action="https://www.foo.com/" method="post" class="form">
-            <div class="contents">
-                <div id="labels">
-                    <label for="name">Full Name: </label>
-                    <label for="email">Email ID: </label>
-                    <label for="phone">Mobile Number: </label>
-                    <label for="bitsID">BITS ID: </label>
-                    <label for="hostel">Hostel: </label>
-                </div>
+    <form action="https://www.foo.com/" method="post" class="form">
+        <div class="contents">
+            <div id="labels">
+                <label for="name">Full Name: </label>
+                <label for="email">Email ID: </label>
+                <label for="phone">Mobile Number: </label>
+                <label for="bitsID">BITS ID: </label>
+                <label for="hostel">Hostel: </label>
+            </div>
 
-                <div id="inputs">
-                    <input type="text" name="name" id="name" class="box" placeholder="eg. John Lorem Doe" required>
-                    <input type="text" name="email" id="email" class="box" placeholder="eg. example@gmail.com" required>
-                    <input type="number" name="phone" id="phone" class="box" required>
-                    <input type="text" name="bitsID" id="bitsID" placeholder="eg. 2023B1PS9999P" class="box" required>
-                    <select name="hostel" id="hostel" class="box" required>
-                        <option value="sr">SR Bhawan</option>
-                        <option value="vk">Vishwakarma Bhawan</option>
-                        <option value="me">Meera Bhawan</option>
-                        <option value="as">Ashok Bhawan</option>
-                        <option value="rp">Ranapratap Bhawan</option>
-                        <option value="vy">Vyas Bhawan</option>
-                        <option value="ga">Gandhi Bhawan</option>
-                        <option value="kr">Krishna Bhawan</option>
-                        <option value="sh">Shankar Bhawan</option>
-                        <option value="bu">Budh Bhawan</option>
-                        <option value="ra">Ram Bhawan</option>
-                        <option value="cvr">CVR Bhawan</option>
-                        <option value="ba" disabled>Bagirath Bhawan</option>
-                        <option value="ma">Malviya Bhawan</option>
-                    </select>
-                </div>
+            <div id="inputs">
+                <input type="text" name="name" id="name" class="box" placeholder="eg. John Lorem Doe" required>
+                <input type="text" name="email" id="email" class="box" placeholder="eg. example@gmail.com" required>
+                <input type="number" name="phone" id="phone" class="box" required>
+                <input type="text" name="bitsID" id="bitsID" placeholder="eg. 2023B1PS9999P" class="box" required>
+                <select name="hostel" id="hostel" class="box" required>
+                    <option value="sr">SR Bhawan</option>
+                    <option value="vk">Vishwakarma Bhawan</option>
+                    <option value="me">Meera Bhawan</option>
+                    <option value="as">Ashok Bhawan</option>
+                    <option value="rp">Ranapratap Bhawan</option>
+                    <option value="vy">Vyas Bhawan</option>
+                    <option value="ga">Gandhi Bhawan</option>
+                    <option value="kr">Krishna Bhawan</option>
+                    <option value="sh">Shankar Bhawan</option>
+                    <option value="bu">Budh Bhawan</option>
+                    <option value="ra">Ram Bhawan</option>
+                    <option value="cvr">CVR Bhawan</option>
+                    <option value="ba" disabled>Bagirath Bhawan</option>
+                    <option value="ma">Malviya Bhawan</option>
+                </select>
+            </div>
 
-                <div id="errorBoxes">
-
-                </div>
+            <div id="errorBoxes">
+                <p id="nameError">Invalid Name</p>
+                <p id="emailError">Invalid Email</p>
+                <p id="phoneError">Invalid Phone no.</p>
+                <p id="bitsIDError">Invalid BITS ID</p>
             </div>
-            <div id="sizeSelector">
-                <div class="size">
-                    <input type="radio" name="size" class="sizes" id="xs" value="xs">
-                    <label for="xs">XS</label>
-                </div>
-                <div class="size">
-                    <input type="radio" name="size" class="sizes" id="s" value="s">
-                    <label for="s">S</label>
-                </div>
-                <div class="size">
-                    <input type="radio" name="size" class="sizes" id="m" value="m">
-                    <label for="m">M</label>
-                </div>
-                <div class="size">
-                    <input type="radio" name="size" class="sizes" id="l" value="l">
-                    <label for="l">L</label>
-                </div>
-                <div class="size">
-                    <input type="radio" name="size" class="sizes" id="xl" value="xl">
-                    <label for="xl">XL</label>
-                </div>
-                <div class="size">
-                    <input type="radio" name="size" class="sizes" id="xxl" value="xxl">
-                    <label for="xxl">XXL</label>
-                </div>
+        </div>
+        <div id="sizeSelector">
+            <div class="size">
+                <input type="radio" name="size" class="sizes" id="xs" value="xs">
+                <label for="xs">XS</label>
             </div>
-            <div class="tnc">
-                <label for="tnc">I Agree to the Terms & Conditions</label>
-                <input type="checkbox" name="tnc" id="tnc" required>
+            <div class="size">
+                <input type="radio" name="size" class="sizes" id="s" value="s">
+                <label for="s">S</label>
             </div>
-            <div class="buttons">
-                <input type="submit" name="" id="submit">
-                <input type="reset" name="" id="">
+            <div class="size">
+                <input type="radio" name="size" class="sizes" id="m" value="m">
+                <label for="m">M</label>
             </div>
-        </form>
-    </div>
+            <div class="size">
+                <input type="radio" name="size" class="sizes" id="l" value="l">
+                <label for="l">L</label>
+            </div>
+            <div class="size">
+                <input type="radio" name="size" class="sizes" id="xl" value="xl">
+                <label for="xl">XL</label>
+            </div>
+            <div class="size">
+                <input type="radio" name="size" class="sizes" id="xxl" value="xxl">
+                <label for="xxl">XXL</label>
+            </div>
+        </div>
+        <div class="tnc">
+            <input type="checkbox" name="tnc" id="tnc" required>
+            <label for="tnc">I Agree to the Terms & Conditions</label>
+        </div>
+        <div class="buttons">
+            <input type="submit" name="" id="submit">
+            <input type="reset" name="" id="reset">
+        </div>
+    </form>
 
     <script src="script.js"></script>
 </body>

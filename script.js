@@ -5,6 +5,9 @@ const bitsID = document.querySelector("#bitsID")
 const hostel = document.querySelector("#hostel")
 const sizes = document.querySelectorAll(".sizes")
 const form = document.querySelector(".form")
+const merchImg = document.querySelector("#merchImage")
+const initHeading = document.querySelector("#initialHeading")
+const confirmed = document.querySelector("#confirmed")
 var errors = []
 var userData = {
     'name': '',
@@ -50,7 +53,7 @@ function formSubmit(e) {
     if (name.value.trim().length < 5) {
         errors.push('Name too short')
     }
-    else if (name.value.trim.length > 50) {
+    else if (name.value.trim().length > 50) {
         error.push('Name too long')
     }
 
@@ -91,6 +94,11 @@ function formSubmit(e) {
             mode: 'no-cors',
             body: JSON.stringify(userData)
         })
+
+        form.style.display = "none";
+        initHeading.style.display = "none";
+        merchImg.style.display = "none";
+        confirmed.style.display = "block";
 
         console.log('Success')
         console.log(userData)
