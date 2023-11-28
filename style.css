@@ -84,7 +84,8 @@ h1 {
 #errorBoxes p {
     display: block;
     height: 20px;
-    padding-top: 10.2px;
+    padding-top: 10.5px;
+    user-select: none;
 }
 
 #errorBoxes p:first-of-type {
@@ -95,7 +96,7 @@ h1 {
 
 #errorBoxes {
     display: none;
-    color: red;
+    color: white;
     margin-left: 8px;
 }
 

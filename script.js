@@ -8,6 +8,11 @@ const form = document.querySelector(".form")
 const merchImg = document.querySelector("#merchImage")
 const initHeading = document.querySelector("#initialHeading")
 const confirmed = document.querySelector("#confirmed")
+const nameError = document.querySelector("#nameError")
+const emailError = document.querySelector("#emailError")
+const phoneError = document.querySelector("#phoneError")
+const bitsIDError = document.querySelector("#bitsIDError")
+const errorBoxes = document.querySelector("#errorBoxes")
 var errors = []
 var userData = {
     'name': '',
@@ -38,6 +43,14 @@ function bitsIDValidate() {
     }
 }
 
+function clearErrors() {
+    nameError.style.color = "white"
+    emailError.style.color = "white"
+    phoneError.style.color = "white"
+    bitsIDError.style.color = "white"
+    errorBoxes.style.display = "none"
+}
+
 function formSubmit(e) {
     e.preventDefault()
     errors = []
@@ -51,26 +64,32 @@ function formSubmit(e) {
     }
 
     if (name.value.trim().length < 5) {
+        nameError.style.color = "red";
         errors.push('Name too short')
     }
     else if (name.value.trim().length > 50) {
+        nameError.style.color = "red";
         error.push('Name too long')
     }
 
     if (!emailValidate()) {
+        emailError.style.color = "red";
         errors.push('Invalid Email')
     }
 
     if (phone.value.length !== 10) {
+        phoneError.style.color = "red";
         errors.push('Invalid phone number')
     }
 
     if (!bitsIDValidate()) {
+        bitsIDError.style.color = "red";
         errors.push('Invalid BITS ID')
     }
 
     if (errors.length > 0) {
-        alert(`Following errors have been encountered\n\n${errors.join('\n')}`)
+        // alert(`Following errors have been encountered\n\n${errors.join('\n')}`)
+        errorBoxes.style.display = "inline-block";
     }
     else if (errors.length === 0) {
         userData['name'] = name.value.trim()
@@ -106,3 +125,7 @@ function formSubmit(e) {
 }
 
 form.addEventListener('submit', formSubmit)
+name.addEventListener('focus', clearErrors)
+email.addEventListener('focus', clearErrors)
+phone.addEventListener('focus', clearErrors)
+bitsID.addEventListener('focus', clearErrors)
