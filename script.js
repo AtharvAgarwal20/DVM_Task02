@@ -98,7 +98,7 @@ function formSubmit(e) {
             },
             mode: 'no-cors',
             body: JSON.stringify(userData)
-        }).then(fetchResponse => console.log(fetchResponse)).catch(fetchError => console.log(fetchError));
+        })//.then(fetchResponse => console.log(fetchResponse)).catch(fetchError => console.log(fetchError));
 
         form.style.display = "none";
         initHeading.style.display = "none";
