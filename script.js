@@ -14,19 +14,12 @@ const phoneError = document.querySelector("#phoneError")
 const bitsIDError = document.querySelector("#bitsIDError")
 const errorBoxes = document.querySelector("#errorBoxes")
 var errors = []
-var userData = {
-    'name': '',
-    'email': '',
-    'phone': '',
-    'bitsID': '',
-    'hostel': '',
-    'size': ''
-}
+var userData = {}
 const emailRegex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi)
 const bitsIDregex = new RegExp(/\d{4}(A|B)\d(PS|TH)\d{4}(P|G|H)/gi)
 
-function emailValidate() {
-    if (email.value.trim().match(emailRegex) == email.value.trim()) {
+function isEmailValid(emailID) {
+    if (emailID.match(emailRegex) == email.value.trim()) {
         return true
     }
     else {
@@ -34,8 +27,8 @@ function emailValidate() {
     }
 }
 
-function bitsIDValidate() {
-    if (bitsID.value.trim().match(bitsIDregex) == bitsID.value.trim()) {
+function isBitsIDValid(bits) {
+    if (bits.match(bitsIDregex) == bitsID.value.trim()) {
         return true
     }
     else {
@@ -54,14 +47,7 @@ function clearErrors() {
 function formSubmit(e) {
     e.preventDefault()
     errors = []
-    userData = {
-        'name': '',
-        'email': '',
-        'phone': '',
-        'bitsID': '',
-        'hostel': '',
-        'size': ''
-    }
+    userData = {}
 
     if (name.value.trim().length < 5) {
         nameError.style.color = "red";
@@ -72,7 +58,7 @@ function formSubmit(e) {
         error.push('Name too long')
     }
 
-    if (!emailValidate()) {
+    if (!isEmailValid(email.value.trim())) {
         emailError.style.color = "red";
         errors.push('Invalid Email')
     }
@@ -82,7 +68,7 @@ function formSubmit(e) {
         errors.push('Invalid phone number')
     }
 
-    if (!bitsIDValidate()) {
+    if (!isBitsIDValid(bitsID.value.trim())) {
         bitsIDError.style.color = "red";
         errors.push('Invalid BITS ID')
     }
@@ -104,7 +90,7 @@ function formSubmit(e) {
             }
         }
 
-        fetch('https://www.foo.com', {
+        fetch('https://www.foo.com/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -112,7 +98,7 @@ function formSubmit(e) {
             },
             mode: 'no-cors',
             body: JSON.stringify(userData)
-        })
+        }).then(res => console.log(res));
 
         form.style.display = "none";
         initHeading.style.display = "none";
