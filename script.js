@@ -13,8 +13,8 @@ const emailError = document.querySelector("#emailError")
 const phoneError = document.querySelector("#phoneError")
 const bitsIDError = document.querySelector("#bitsIDError")
 const errorBoxes = document.querySelector("#errorBoxes")
-var errors = []
-var userData = {}
+let errors = []
+let userData = {}
 const emailRegex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi)
 const bitsIDregex = new RegExp(/\d{4}(A|B)\d(PS|TH)\d{4}(P|G|H)/gi)
 
@@ -26,6 +26,7 @@ function isEmailValid(emailID) {
         return false
     }
 }
+
 
 function isBitsIDValid(bits) {
     if (bits.match(bitsIDregex) == bitsID.value.trim()) {
@@ -107,6 +108,9 @@ function formSubmit(e) {
 
         console.log('Success')
         console.log(userData)
+        for (let dataSet of Object.entries(userData)) {
+            console.log(`${dataSet[0]}: ${dataSet[1]}`)
+        }
     }
 }
 
