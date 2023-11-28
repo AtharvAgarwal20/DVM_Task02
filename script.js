@@ -90,7 +90,7 @@ function formSubmit(e) {
             }
         }
 
-        fetch('https://www.foo.com/', {
+        fetch('http://www.foo.com/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
