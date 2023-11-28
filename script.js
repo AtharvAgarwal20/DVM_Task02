@@ -75,7 +75,6 @@ function formSubmit(e) {
     }
 
     if (errors.length > 0) {
-        // alert(`Following errors have been encountered\n\n${errors.join('\n')}`)
         errorBoxes.style.display = "inline-block";
     }
     else if (errors.length === 0) {
@@ -99,7 +98,7 @@ function formSubmit(e) {
             },
             mode: 'no-cors',
             body: JSON.stringify(userData)
-        }).then(res => console.log(res));
+        }).then(fetchResponse => console.log(fetchResponse)).catch(fetchError => console.log(fetchError));
 
         form.style.display = "none";
         initHeading.style.display = "none";
