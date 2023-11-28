@@ -19,22 +19,11 @@ const emailRegex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi)
 const bitsIDregex = new RegExp(/\d{4}(A|B)\d(PS|TH)\d{4}(P|G|H)/gi)
 
 function isEmailValid(emailID) {
-    if (emailID.match(emailRegex) == email.value.trim()) {
-        return true
-    }
-    else {
-        return false
-    }
+    return (emailID.match(emailRegex) !== null);
 }
 
-
 function isBitsIDValid(bits) {
-    if (bits.match(bitsIDregex) == bitsID.value.trim()) {
-        return true
-    }
-    else {
-        return false
-    }
+    return (bits.match(bitsIDregex) !== null);
 }
 
 function clearErrors() {
