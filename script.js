@@ -13,10 +13,13 @@ const emailError = document.querySelector("#emailError")
 const phoneError = document.querySelector("#phoneError")
 const bitsIDError = document.querySelector("#bitsIDError")
 const errorBoxes = document.querySelector("#errorBoxes")
-let errors = []
-let userData = {}
+const carouselImage = document.querySelector(".carouselImage")
+const carouselPrev = document.querySelector("#carouselPrev")
+const carouselNext = document.querySelector("#carouselNext")
 const emailRegex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi)
 const bitsIDregex = new RegExp(/\d{4}(A|B)\d(PS|TH)\d{4}(P|G|H)/gi)
+let errors = []
+let userData = {}
 
 function isEmailValid(emailID) {
     return (emailID.match(emailRegex) !== null);
