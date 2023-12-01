@@ -6,17 +6,17 @@ body {
     position: fixed;
     height: 100%;
     width: 100%;
-    background-image: url(images/dominik-schroder-FIKD9t5_5zQ-unsplash.jpg);
+    background-image: url(images/cool-background-flare.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     z-index: -10;
-    filter: blur(5px);
+    /* filter: blur(5px); */
 }
 
 input,
 select {
-    border-radius: 8px;
+    border-radius: 30px;
 }
 
 form {
@@ -29,39 +29,49 @@ form {
     background-color: white;
 }
 
-/* #merchImage {
-    display: flex;
-    justify-content: center;
+#merchImage {
+    display: none;
+    margin: 0 auto;
 }
 
 @media(max-width: 786px) {
     #merchImage {
+        display: flex;
+        justify-content: center;
         flex-direction: column;
         align-items: center;
     }
 
     #merchImage img {
         width: fit-content;
+        margin: 0 1.2rem;
+        margin-bottom: 1.2rem;
+        height: 45vh;
+    }
+
+    .carousel {
+        display: none;
     }
 }
-
-#merchImage img {
-    margin: 0 1.2rem;
-    margin-bottom: 1.2rem;
-    height: 45vh;
-} */
 
 .carousel button {
     position: absolute;
     top: 276.5px;
     border-radius: 100%;
-    background-color: rgb(44, 44, 44);
-    font-size: 2.5rem;
-    line-height: 2.5rem;
+    background-color: black;
+    height: 2.5rem;
     width: 2.5rem;
     padding: 0;
     border: none;
     color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel button svg {
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 .carousel {
@@ -95,6 +105,44 @@ h1 {
 #confirmed {
     display: none;
     font-size: 5rem;
+}
+
+#backButton {
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    padding: auto;
+    height: 4rem;
+    width: 13rem;
+    font-size: 3rem;
+    transition:
+        background-color 200ms,
+        color 200ms,
+        border-radius 200ms,
+        border 100ms;
+}
+
+#backButton:hover {
+    transition:
+        background-color 200ms,
+        color 200ms,
+        border-radius 200ms,
+        border 100ms;
+    background-color: white;
+    color: black;
+    border-radius: 50px;
+    border: 2px solid black;
+}
+
+#backButton svg {
+    height: 2rem;
+    width: 2rem;
+}
+
+.backBtn {
+    display: none;
+    justify-content: center;
 }
 
 #labels label {
@@ -163,7 +211,7 @@ h1 {
 .box {
     height: 20px;
     max-width: 500px;
-    padding-left: 5px;
+    padding-left: 8px;
     display: block;
     margin-bottom: 5px;
     border: 2px solid black;
@@ -191,6 +239,11 @@ h1 {
 
 .buttons #submit {
     background-color: #5c92ff;
+    transition:
+        background-color 150ms,
+        color 150ms,
+        box-shadow 150ms;
+    ;
 }
 
 .buttons #submit:hover {
@@ -205,6 +258,11 @@ h1 {
 
 .buttons #reset {
     background-color: #ff6969;
+    transition:
+        background-color 150ms,
+        color 150ms,
+        box-shadow 150ms;
+    ;
 }
 
 .buttons #reset:hover {

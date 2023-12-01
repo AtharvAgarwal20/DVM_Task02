@@ -16,6 +16,7 @@ const errorBoxes = document.querySelector("#errorBoxes")
 const carouselImage = document.querySelector(".carouselImage")
 const carouselPrev = document.querySelector("#carouselPrev")
 const carouselNext = document.querySelector("#carouselNext")
+const backButton = document.querySelector(".backBtn")
 const emailRegex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi)
 const bitsIDregex = new RegExp(/\d{4}(A|B)\d(PS|TH)\d{4}(P|G|H)/gi)
 let errors = []
@@ -30,6 +31,17 @@ function isCarouselPrev() {
     carouselPrev.style.visibility = "hidden"
     carouselNext.style.visibility = "visible"
     carouselImage.style.transform = "translateX(0px)"
+}
+
+function backButtonClick() {
+    form.removeAttribute('style')
+    initHeading.removeAttribute('style')
+    merchImg.removeAttribute('style')
+    carouselImage.removeAttribute('style')
+    carouselNext.removeAttribute('style')
+    carouselPrev.removeAttribute('style')
+    confirmed.removeAttribute('style')
+    backButton.removeAttribute('style')
 }
 
 function isEmailValid(emailID) {
@@ -53,7 +65,7 @@ function formSubmit(e) {
     errors = []
     userData = {}
 
-    if (name.value.trim().length < 5 && name.value.trim().length > 50) {
+    if (name.value.trim().length < 5 || name.value.trim().length > 50) {
         nameError.style.color = "red";
         errors.push('Name Invalid')
     }
@@ -102,7 +114,11 @@ function formSubmit(e) {
         form.style.display = "none";
         initHeading.style.display = "none";
         merchImg.style.display = "none";
+        carouselImage.style.display = "none";
+        carouselNext.style.display = "none";
+        carouselPrev.style.display = "none";
         confirmed.style.display = "block";
+        backButton.style.display = "flex";
 
         console.log('Success')
         console.log(userData)
@@ -119,3 +135,4 @@ phone.addEventListener('focus', clearErrors)
 bitsID.addEventListener('focus', clearErrors)
 carouselNext.addEventListener('click', isCarouselNext)
 carouselPrev.addEventListener('click', isCarouselPrev)
+backButton.addEventListener('click', backButtonClick)
