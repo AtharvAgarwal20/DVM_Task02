@@ -39,13 +39,9 @@ function formSubmit(e) {
     errors = []
     userData = {}
 
-    if (name.value.trim().length < 5) {
+    if (name.value.trim().length < 5 && name.value.trim().length > 50) {
         nameError.style.color = "red";
-        errors.push('Name too short')
-    }
-    else if (name.value.trim().length > 50) {
-        nameError.style.color = "red";
-        error.push('Name too long')
+        errors.push('Name Invalid')
     }
 
     if (!isEmailValid(email.value.trim())) {

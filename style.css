@@ -29,7 +29,7 @@ form {
     background-color: white;
 }
 
-#merchImage {
+/* #merchImage {
     display: flex;
     justify-content: center;
 }
@@ -49,6 +49,24 @@ form {
     margin: 0 1.2rem;
     margin-bottom: 1.2rem;
     height: 45vh;
+} */
+
+.carousel {
+    width: 282px;
+    height: 353px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel .carouselImage {
+    overflow: hidden;
+    position: relative;
+    transition: 1s;
+}
+
+.carousel .carouselImage:hover {
+    transform: translateX(-298px);
+    transition: transform 1s;
 }
 
 h1 {
