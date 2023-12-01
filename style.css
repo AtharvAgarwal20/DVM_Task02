@@ -73,6 +73,7 @@ form {
 
 .carousel #carouselPrev {
     left: calc(50vw - 200px);
+    visibility: hidden;
 }
 
 .carousel #carouselNext {
@@ -81,11 +82,6 @@ form {
 
 .carousel .carouselImage {
     transition: 1s;
-}
-
-.carousel .carouselImage:hover {
-    transform: translateX(-298px);
-    transition: transform 1s;
 }
 
 h1 {

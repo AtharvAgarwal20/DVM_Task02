@@ -21,6 +21,17 @@ const bitsIDregex = new RegExp(/\d{4}(A|B)\d(PS|TH)\d{4}(P|G|H)/gi)
 let errors = []
 let userData = {}
 
+function isCarouselNext() {
+    carouselNext.style.visibility = "hidden"
+    carouselPrev.style.visibility = "visible"
+    carouselImage.style.transform = "translateX(-298px)"
+}
+function isCarouselPrev() {
+    carouselPrev.style.visibility = "hidden"
+    carouselNext.style.visibility = "visible"
+    carouselImage.style.transform = "translateX(0px)"
+}
+
 function isEmailValid(emailID) {
     return (emailID.match(emailRegex) !== null);
 }
@@ -106,3 +117,5 @@ name.addEventListener('focus', clearErrors)
 email.addEventListener('focus', clearErrors)
 phone.addEventListener('focus', clearErrors)
 bitsID.addEventListener('focus', clearErrors)
+carouselNext.addEventListener('click', isCarouselNext)
+carouselPrev.addEventListener('click', isCarouselPrev)
